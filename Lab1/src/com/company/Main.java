@@ -9,18 +9,15 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Ввести число в шестнадцатеричной системе счисления :");
-        boolean flag = true;
+
         String number = scanner.nextLine().toUpperCase();
 
-        while (flag) {
-            if (number.matches("^[-+]?[0-9A-F]+[.,]?[0-9A-F]*$")) {//Проверка , на то чтобы использовались только символы которые есть в шестнадцатеричной системе счисления
-                System.out.println("Перевод из шестнадцатеричной системе счисления в двоичную :" + Hex_To_Binary(number));
-                flag = false;
-            } else {
-                System.out.println("Введено не шестнадцатеричное число.");
-                break;
-            }
+        if (number.matches("^[-+]?[0-9A-F]+[.,]?[0-9A-F]*$")) {//Проверка , на то чтобы использовались только символы которые есть в шестнадцатеричной системе счисления
+            System.out.println("Перевод из шестнадцатеричной системе счисления в двоичную :" + Hex_To_Binary(number));
+        } else {
+            System.out.println("Введено не шестнадцатеричное число.");
         }
+
     }
 
     public static String Hex_To_Binary(String str) {
